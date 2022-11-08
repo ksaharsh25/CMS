@@ -1,0 +1,50 @@
+{% load cms_tags %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>IT company</title>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Web builder</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Employers</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="aboutGoal">
+	<div class="container-fluid">
+		<div class="row">
+			{%for i in about%}
+			<div class="col-sm-6 my-auto">
+				<h1>{{i.heading_title1}}</h1>
+				<h2 class="text-red">{{i.heading_title2}}</h2>
+				<form class="form-inline py-4" method="post">
+					<div class="input-group mb-4 w-75">
+						<i class="fa fa-search" aria-hidden="true"></i>
+						<input type="search" name="search" id="search" class="form-control" placeholder="Search by Skill,job and Company" value="" required>
+						<input type="submit" name="searchbtn" class="btn btn-dark rounded-pill" id="searchBtn" value="Search">
+					</div>
+				</form>
+			</div>
+            {%endfor%}
+			<div class="col-sm-6 d-none d-md-block">
+				<img class="w-100" src="images/about-us/Firs-banner.png" alt="Banner" />
+			</div>
+		</div>
+	</div>
+</section>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% endblock content %}
